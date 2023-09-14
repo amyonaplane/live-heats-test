@@ -1,7 +1,7 @@
 function App() {
   return (
-    <div>
-      <div className="bg-pink text-3xl">Test</div>
+    <div className="bg-blue-200 h-screen w-screen">
+      <div className="font-extrabold text-black-300 flex justify-center text-3xl">LiveHeats Technical Test</div>
     </div>
   );
 }
