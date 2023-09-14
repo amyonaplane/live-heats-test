@@ -1,6 +1,29 @@
-# Getting Started with Create React App
+# About This App
+This system is designed to manage race results.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Use Cases
+1. As a teacher, I want to add student information so I can register students for races.
+
+2. As a teacher, I want to specify lane information so I can allocate students to lanes for races.
+
+3. As a teacher, I want to create races so I can track who raced in which lane, and what race position they had.
+
+4. As a teacher, I want to assign students to a lane so the race can be more organized.
+
+5. As a teacher, I want to assign the finishing race position of each student so I can determine who the winner is.
+
+## MVP
+* Each race will involve at least 2 students
+* Each race contains at least 2 lanes
+* Each student can be assigned a finishing race position
+
+## Optional
+* Each race has a maximum number of students
+* All students need to be in a lane, but not all lanes have to have a student (uneven participant numbers, knock-out races, etc.)
+* DNFs, no-shows
+* Implement race timings
+* Implement race history of each student
+* Implement information for students to see
 
 ## Available Scripts
 
