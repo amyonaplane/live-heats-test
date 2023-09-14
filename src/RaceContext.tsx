@@ -4,13 +4,15 @@ import { PropsWithChildren, createContext, useContext, useState } from "react";
 
 interface RaceState {
   students: string[];
+  raceStarted: boolean;
 }
 
 const defaultRaceState: RaceState = {
-  students: []
+  students: [],
+  raceStarted: false
 };
 
-type RaceStateSetter = (key: keyof RaceState, value: string[]) => void;
+type RaceStateSetter = (key: keyof RaceState, value: boolean | string[]) => void;
 
 export interface RaceContext {
   raceState: RaceState;

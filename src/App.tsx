@@ -1,10 +1,11 @@
+import Button from "./components/Button";
 import AddInput from "./components/inputs/AddInput";
 import RaceSpace from "./components/RaceSpace";
 import { useRaceContext } from "./RaceContext";
 
 function App() {
   const { raceState, setRaceState } = useRaceContext();
-  setRaceState("students", ["Amy", "AMY", "AmY"]);
+  // setRaceState("students", ["Amy", "AMY", "AmY"]);
 
   return (
     <div className="bg-blue-200 h-screen w-screen">
@@ -17,6 +18,8 @@ function App() {
           placeholder="Enter student name"
           onClick={() => {}}
         />
+        <Button label="Start" onClick={()=>setRaceState('raceStarted', true)} />
+        <Button label="Reset" onClick={()=>setRaceState('raceStarted', false)} />
         <RaceSpace studentNames={raceState.students} />
       </div>
     </div>
