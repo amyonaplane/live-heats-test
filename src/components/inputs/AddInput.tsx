@@ -6,16 +6,27 @@ interface Props {
   placeholder: string;
   buttonLabel: string;
   onClick: () => void;
+  onChange: (e: any) => void;
   className?: string;
 }
 
-export default function AddInput({ buttonLabel, onClick, placeholder }: Props) {
+export default function AddInput({
+  buttonLabel,
+  onClick,
+  onChange,
+  placeholder,
+}: Props) {
   const { raceState } = useRaceContext();
-  
+
   return (
     <div className="flex flex-row">
-      <Input placeholder={placeholder} />
-      <Button disabled={raceState.raceStarted} className={"ml-2"} label={buttonLabel} onClick={onClick} />
+      <Input placeholder={placeholder} onChange={onChange} />
+      <Button
+        disabled={raceState.raceStarted}
+        className={"ml-2"}
+        label={buttonLabel}
+        onClick={onClick}
+      />
     </div>
   );
 }

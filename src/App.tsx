@@ -5,7 +5,6 @@ import { useRaceContext } from "./RaceContext";
 
 function App() {
   const { raceState, setRaceState } = useRaceContext();
-  // setRaceState("students", ["Amy", "AMY", "AmY"]);
 
   return (
     <div className="bg-blue-200 h-screen w-screen">
@@ -16,10 +15,24 @@ function App() {
         <AddInput
           buttonLabel="Add"
           placeholder="Enter student name"
-          onClick={() => {}}
+          onClick={() => {
+            const arr = raceState.students.concat(
+              raceState.currentStudentInput
+            );
+            setRaceState("students", arr);
+          }}
+          onChange={(e) =>
+            setRaceState("currentStudentInput", e.currentTarget.value)
+          }
         />
-        <Button label="Start" onClick={()=>setRaceState('raceStarted', true)} />
-        <Button label="Reset" onClick={()=>setRaceState('raceStarted', false)} />
+        <Button
+          label="Start"
+          onClick={() => setRaceState("raceStarted", true)}
+        />
+        <Button
+          label="Reset"
+          onClick={() => setRaceState("raceStarted", false)}
+        />
         <RaceSpace studentNames={raceState.students} />
       </div>
     </div>

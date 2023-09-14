@@ -7,8 +7,12 @@ interface ButtonProps {
   disabled?: boolean;
 }
 
-export default function Button({ label, onClick, className, disabled }: ButtonProps) {
-  const { raceState } = useRaceContext();
+export default function Button({
+  label,
+  onClick,
+  className,
+  disabled,
+}: ButtonProps) {
 
   return (
     <button
