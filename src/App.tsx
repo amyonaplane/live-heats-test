@@ -1,12 +1,10 @@
-import { useState } from "react";
 import AddInput from "./components/inputs/AddInput";
 import RaceSpace from "./components/RaceSpace";
-import Input from "./components/inputs/Input";
-import Button from "./components/Button";
+import { useRaceContext } from "./RaceContext";
 
 function App() {
-
-  const studentNames = ['Amy', 'AMY', 'AmY']
+  const { raceState, setRaceState } = useRaceContext();
+  setRaceState("students", ["Amy", "AMY", "AmY"]);
 
   return (
     <div className="bg-blue-200 h-screen w-screen">
@@ -14,8 +12,12 @@ function App() {
         LiveHeats Technical Test
       </div>
       <div className="">
-        <AddInput buttonLabel="Add" placeholder="Enter student name" onClick={()=>{}} />
-        <RaceSpace studentNames={studentNames} />
+        <AddInput
+          buttonLabel="Add"
+          placeholder="Enter student name"
+          onClick={() => {}}
+        />
+        <RaceSpace studentNames={raceState.students} />
       </div>
     </div>
   );
