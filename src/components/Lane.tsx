@@ -1,4 +1,5 @@
 import { useRaceContext } from "../RaceContext";
+import Dropdown from "./Dropdown";
 
 interface LaneProps {
   studentName: string;
@@ -11,11 +12,11 @@ export default function Lane({ studentName, totalPlaces }: LaneProps) {
   return (
     <div className="bg-pink-100 flex-1 p-4 mb-10">
       {studentName}
-      <select name="racePlaces" id="racePplaces">
-        {raceState.students.map((student, i) => (
-          <option value={i + 1}>{i + 1}</option>
-        ))}
-      </select>
+      <Dropdown
+        name={"racePlaces"}
+        id={"racePlaces"}
+        array={raceState.students}
+      />
     </div>
   );
 }
