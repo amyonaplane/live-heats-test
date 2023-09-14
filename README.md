@@ -16,9 +16,17 @@ This system is designed to manage race results.
 * Each race will involve at least 2 students
 * Each race contains at least 2 lanes
 * Each student can be assigned a finishing race position
+* No more students can be added to the race once it has started
+* Implement for Mobile
 
 ## Optional
+* Implement for Desktop
+* Nicer colors and styles
+* No more place changes can be made to the race once it has been completed
 * Each race has a maximum number of students
+* Each race has a name and unique ID
+* Implement scroll behaviour for large lists
+* Animation
 * All students need to be in a lane, but not all lanes have to have a student (uneven participant numbers, knock-out races, etc.)
 * DNFs, no-shows
 * Each place can only be assigned to one student
