@@ -39,12 +39,19 @@ function App() {
           />
         </div>
         <RaceSpace studentNames={raceState.students} />
-        <Button
-          className="mx-auto my-2 flex"
-          label="Save"
-          disabled={raceState.raceFinished}
-          onClick={() => setRaceState("raceFinished", true)}
-        />
+        <div className="flex flex-row justify-center gap-2">
+          <Button
+            className="my-2 flex"
+            label="Save"
+            disabled={raceState.raceFinished}
+            onClick={() => setRaceState("raceFinished", true)}
+          />
+          <Button
+            className="my-2 flex"
+            label="Edit"
+            onClick={() => setRaceState("raceFinished", false)}
+          />
+        </div>
       </div>
     </div>
   );
