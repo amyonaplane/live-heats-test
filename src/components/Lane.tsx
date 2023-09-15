@@ -11,7 +11,7 @@ export default function Lane({ studentName}: LaneProps) {
   return (
     <div className="bg-pink-100 flex flex-row p-6 mb-4">
         <Dropdown
-          disabled={raceState.students.length < 2 || raceState.raceFinished }
+          disabled={!raceState.raceStarted}
           className="mr-5"
           name={"racePlaces"}
           id={"racePlaces"}
