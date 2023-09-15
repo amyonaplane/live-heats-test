@@ -25,12 +25,27 @@ function App() {
             setRaceState("currentStudentInput", e.currentTarget.value)
           }
         />
+        <div className="flex flex-row justify-center gap-2">
+          <Button
+            className="my-2 flex"
+            label="Start"
+            disabled={raceState.raceStarted}
+            onClick={() => setRaceState("raceStarted", true)}
+          />
+          <Button
+            className="my-2 flex"
+            label="Reset"
+            disabled={raceState.raceStarted}
+            onClick={() => setRaceState("raceStarted", true)}
+          />
+        </div>
+        <RaceSpace studentNames={raceState.students} />
         <Button
           className="mx-auto my-2 flex"
-          label="Start"
+          label="Save"
+          disabled={raceState.raceStarted}
           onClick={() => setRaceState("raceStarted", true)}
         />
-        <RaceSpace studentNames={raceState.students} />
       </div>
     </div>
   );

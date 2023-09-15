@@ -19,7 +19,7 @@ export default function AddInput({
   const { raceState } = useRaceContext();
 
   return (
-    <div className="flex flex-row justify-center">
+    <div className="flex flex-row justify-center pb-2">
       <Input placeholder={placeholder} onChange={onChange} />
       <Button
         disabled={raceState.raceStarted || raceState.currentStudentInput==''}

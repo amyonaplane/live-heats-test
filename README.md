@@ -29,6 +29,7 @@ This system is designed to manage race results.
 * Remove Student from race
 * Implement scroll behaviour for large lists
 * Animation
+* Remove dropdown and make RaceSpace drag-and-drop for Lanes
 * All students need to be in a lane, but not all lanes have to have a student (uneven participant numbers, knock-out races, etc.)
 * DNFs, no-shows
 * Each place can only be assigned to one student
