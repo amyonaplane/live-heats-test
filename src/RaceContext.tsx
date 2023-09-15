@@ -5,12 +5,14 @@ import { PropsWithChildren, createContext, useContext, useState } from "react";
 interface RaceState {
   students: string[];
   raceStarted: boolean;
+  raceFinished: boolean;
   currentStudentInput: string;
 }
 
 const defaultRaceState: RaceState = {
   students: [],
   raceStarted: false,
+  raceFinished: false,
   currentStudentInput:''
 };
 

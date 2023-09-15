@@ -44,7 +44,7 @@ function App() {
           className="mx-auto my-2 flex"
           label="Save"
           disabled={raceState.raceStarted}
-          onClick={() => setRaceState("raceStarted", true)}
+          onClick={() => setRaceState("raceFinished", true)}
         />
       </div>
     </div>
