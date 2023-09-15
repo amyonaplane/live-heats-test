@@ -16,7 +16,6 @@ function App() {
         label="Start"
         disabled={raceState.raceStarted}
         onClick={() => {
-          setRaceState("students", studentList);
           setRaceState("raceStarted", true);
         }}
       />
@@ -62,7 +61,7 @@ function App() {
         />
         {preRaceButtons}
         <RaceSpace studentNames={studentList} />
-        {postRaceButtons}
+        {/* {postRaceButtons} */}
       </div>
     </div>
   );

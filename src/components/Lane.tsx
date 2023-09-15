@@ -3,9 +3,10 @@ import Dropdown from "./Dropdown";
 
 interface LaneProps {
   studentName: string;
+  dropdownOptions: string[];
 }
 
-export default function Lane({ studentName}: LaneProps) {
+export default function Lane({ studentName, dropdownOptions}: LaneProps) {
   const { raceState } = useRaceContext();
 
   return (
@@ -15,7 +16,7 @@ export default function Lane({ studentName}: LaneProps) {
           className="mr-5"
           name={"racePlaces"}
           id={"racePlaces"}
-          array={raceState.students}
+          array={dropdownOptions}
         />
       <div className="my-auto">{studentName}</div>
     </div>
