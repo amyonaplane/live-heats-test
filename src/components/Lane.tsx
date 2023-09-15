@@ -3,10 +3,9 @@ import Dropdown from "./Dropdown";
 
 interface LaneProps {
   studentName: string;
-  totalPlaces: number;
 }
 
-export default function Lane({ studentName, totalPlaces }: LaneProps) {
+export default function Lane({ studentName }: LaneProps) {
   const { raceState } = useRaceContext();
 
   return (

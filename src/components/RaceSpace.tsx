@@ -8,7 +8,7 @@ export default function RaceSpace({ studentNames }: RaceSpaceProps) {
   return (
     <div className="p-4 m-3 flex flex-1 flex-col overflow-scroll h-[380px] border-2 rounded-xl border-green-500">
       {studentNames.map((lane) => {
-        return <Lane studentName={lane} totalPlaces={studentNames.length} />;
+        return <Lane studentName={lane} />;
       })}
     </div>
   );
