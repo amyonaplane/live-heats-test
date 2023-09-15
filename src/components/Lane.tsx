@@ -1,4 +1,3 @@
-import { race } from "q";
 import { useRaceContext } from "../RaceContext";
 import Dropdown from "./Dropdown";
 

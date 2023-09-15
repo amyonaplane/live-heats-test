@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Button from "./components/Button";
 import AddInput from "./components/inputs/AddInput";
 import RaceSpace from "./components/RaceSpace";
@@ -5,6 +6,8 @@ import { useRaceContext } from "./RaceContext";
 
 function App() {
   const { raceState, setRaceState } = useRaceContext();
+  const [inputName, setInputName] = useState('')
+  const [studentList, setStudentList] = useState<string[]>([])
 
   return (
     <div className="bg-blue-200 h-screen w-screen">
@@ -13,16 +16,16 @@ function App() {
       </div>
       <div className="">
         <AddInput
+          value={inputName}
           buttonLabel="Add"
           placeholder="Enter student name"
           onClick={() => {
-            const arr = raceState.students.concat(
-              raceState.currentStudentInput
-            );
-            setRaceState("students", arr);
+            setStudentList([...studentList, inputName])
+            console.log(studentList)
+            setInputName('')
           }}
           onChange={(e) =>
-            setRaceState("currentStudentInput", e.currentTarget.value)
+            setInputName(e.currentTarget.value)
           }
         />
         <div className="flex flex-row justify-center gap-2">
@@ -38,7 +41,7 @@ function App() {
             onClick={() => window.location.reload()}
           />
         </div>
-        <RaceSpace studentNames={raceState.students} />
+        <RaceSpace studentNames={studentList} />
         <div className="flex flex-row justify-center gap-2">
           <Button
             className="my-2 flex"
