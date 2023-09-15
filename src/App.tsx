@@ -61,7 +61,7 @@ function App() {
         />
         {preRaceButtons}
         <RaceSpace studentNames={studentList} />
-        {/* {postRaceButtons} */}
+        {postRaceButtons}
       </div>
     </div>
   );
