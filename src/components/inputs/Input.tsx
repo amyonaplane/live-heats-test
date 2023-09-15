@@ -11,7 +11,7 @@ export default function Input({ placeholder, onChange }: InputProps) {
   return (
     <input
       disabled={raceState.raceStarted}
-      className={`${raceState.raceStarted ? "pointer-none" : ""} bg-grey-100`}
+      className={`${raceState.raceStarted ? "pointer-none opacity-50" : ""} pl-2 bg-grey-100`}
       placeholder={placeholder}
       onChange={onChange}
     />

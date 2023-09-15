@@ -26,12 +26,9 @@ function App() {
           }
         />
         <Button
+          className="mx-auto my-2 flex"
           label="Start"
           onClick={() => setRaceState("raceStarted", true)}
-        />
-        <Button
-          label="Reset"
-          onClick={() => setRaceState("raceStarted", false)}
         />
         <RaceSpace studentNames={raceState.students} />
       </div>
