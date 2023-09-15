@@ -35,7 +35,7 @@ function App() {
           <Button
             className="my-2 flex"
             label="Reset"
-            onClick={() => setRaceState("raceStarted", false)}
+            onClick={() => window.location.reload()}
           />
         </div>
         <RaceSpace studentNames={raceState.students} />
