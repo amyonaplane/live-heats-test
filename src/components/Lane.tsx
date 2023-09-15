@@ -5,7 +5,7 @@ interface LaneProps {
   studentName: string;
 }
 
-export default function Lane({ studentName }: LaneProps) {
+export default function Lane({ studentName}: LaneProps) {
   const { raceState } = useRaceContext();
 
   return (
