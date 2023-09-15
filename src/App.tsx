@@ -35,15 +35,14 @@ function App() {
           <Button
             className="my-2 flex"
             label="Reset"
-            disabled={raceState.raceStarted}
-            onClick={() => setRaceState("raceStarted", true)}
+            onClick={() => setRaceState("raceStarted", false)}
           />
         </div>
         <RaceSpace studentNames={raceState.students} />
         <Button
           className="mx-auto my-2 flex"
           label="Save"
-          disabled={raceState.raceStarted}
+          disabled={raceState.raceFinished}
           onClick={() => setRaceState("raceFinished", true)}
         />
       </div>
