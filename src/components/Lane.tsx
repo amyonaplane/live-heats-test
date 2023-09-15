@@ -10,7 +10,7 @@ export default function Lane({ studentName, totalPlaces }: LaneProps) {
   const { raceState } = useRaceContext();
 
   return (
-    <div className="bg-pink-100 flex flex-row p-6 mb-10">
+    <div className="bg-pink-100 flex flex-row p-6 mb-4">
         <Dropdown
           disabled={raceState.students.length < 2 }
           className="mr-5"
