@@ -22,7 +22,7 @@ export default function AddInput({
     <div className="flex flex-row justify-center">
       <Input placeholder={placeholder} onChange={onChange} />
       <Button
-        disabled={raceState.raceStarted}
+        disabled={raceState.raceStarted || raceState.currentStudentInput==''}
         className={"ml-2"}
         label={buttonLabel}
         onClick={onClick}
