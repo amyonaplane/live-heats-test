@@ -18,7 +18,7 @@ describe("Input", () => {
     expect(input).toBeInTheDocument();
   });
 
-  it("renders with default props", () => {
+  it("calls onChange() when change occurs", () => {
     const { getByPlaceholderText } = render(<Input {...defaultProps} />);
 
     const input = getByPlaceholderText("Enter student name");
