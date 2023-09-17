@@ -1,5 +1,3 @@
-import { useRaceContext } from "../RaceContext";
-
 interface ButtonProps {
   label: string;
   onClick: () => void;

@@ -64,18 +64,40 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+## Test For Production
+### Manual Testing
+Follow through the application with common user cases.
+### Automated Testing
+Add any tests that are relevant to the newly functionality the feature adds.
+#### Unit Tests
+Ensure that a a single function, method, or class of the application performs as intended.
+#### Integration Tests
+Ensure that individual parts of the application work as intended when integrated together into a complete system.
+#### E2E Tests
+Ensure that the entire application functions as a user would expect.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Observability
+Ensure a baseline to the application health is determined, and new changes do not degrade performance, reliability, or user expectations.
+#### Monitoring
+Track application perforance, and alert of any negative changes.
+Ideally this could be passed into another application like DataDog.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Logging
+To record user actions to understand their behaviours.
+Ideally this could be passed into another application like Heap.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Deployment Plan
+1. Inform Stakeholders that feature is developed and tested
+2. Determine release rollout based on feature risk and cost
+3. Inform Stakeholders when feature is released.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### User Training
+Ensure users know how to use the application. Ideally the application would have someting in-product to explain or be designed intuitively.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### Documentation
+Create a tangible record of what choices were made and the outcomes of these decisions for future developers, and also a set of updates and instructions for the users to understand.
+#### Video Recordings
+For users who prefer visual reference. These can be used for reference for users or announcement material.
+#### In-Person/Zoom Demos
+For users who want a customized run-through of the application.
+This can be a premium feature or dedicated section for users to access.
