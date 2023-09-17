@@ -15,11 +15,12 @@ export default function Dropdown({
 }: DropdownProps) {
   return (
     <select
+      data-testid={"dropdown-select"}
       disabled={disabled}
       name={name}
       id={id}
       className={`${className} ${
-        disabled ? "opacity-50" : ""
+        disabled ? "opacity-50 pointer-none" : ""
       } text-sm p-3 w-[60px]`}
     >
       {array.map((arrayItem, i) => (
