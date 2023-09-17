@@ -28,6 +28,8 @@ describe("Button", () => {
 
     const button = getByRole("button");
     expect(button).toHaveAttribute("disabled");
+    expect(button).toHaveClass("pointer-none");
+    expect(button).toHaveClass("opacity-50");
   });
 
   it("renders with custom label", () => {

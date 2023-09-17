@@ -15,7 +15,7 @@ export default function Button({
   return (
     <button
       disabled={disabled}
-      className={`${className} ${disabled ? 'opacity-50' : ''} p-1 bg-gray-100 rounded-lg border-2 border-solid`}
+      className={`${className} ${disabled ? 'opacity-50 pointer-none' : ''} p-1 bg-gray-100 rounded-lg border-2 border-solid`}
       onClick={() => onClick()}
     >
       {label}
