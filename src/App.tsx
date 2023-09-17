@@ -5,29 +5,33 @@ import RaceSpace from "./components/RaceSpace";
 import { useRaceContext } from "./RaceContext";
 import { useModal } from "./ModalContext";
 import Modal from "./Modal";
+import { ErrorMessages } from "./enums/ErrorMessages";
 
 function App() {
   const { raceState, setRaceState } = useRaceContext();
-  const { showModal } = useModal()
+  const { showModal } = useModal();
 
   const [inputName, setInputName] = useState("");
   const [studentList, setStudentList] = useState<string[]>([]);
-  const [errorMessage, setErrorMessage] = useState('');
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const errorModal = (
-    <Modal>
-      {errorMessage}
-    </Modal>
-  )
+  const errorModal = <Modal>{errorMessage}</Modal>;
 
   const preRaceButtons = (
     <div className="flex flex-row justify-center gap-2">
       <Button
         className="my-2 flex"
-        label="Start"
-        disabled={raceState.raceStarted}
+        label="Start Race"
         onClick={() => {
-          setRaceState("raceStarted", true);
+          if (raceState.raceStarted) {
+            setErrorMessage(ErrorMessages.RACE_ACTIVE);
+            showModal();
+          } else if (studentList.length < 2) {
+            setErrorMessage(ErrorMessages.NOT_ENOUGH_PARTICIPANTS);
+            showModal();
+          } else {
+            setRaceState("raceStarted", true);
+          }
         }}
       />
       <Button
@@ -42,13 +46,19 @@ function App() {
     <div className="flex flex-row justify-center gap-2">
       <Button
         className="my-2 flex"
-        label="Save"
-        disabled={raceState.raceFinished}
-        onClick={() => setRaceState("raceFinished", true)}
+        label="Save Results"
+        onClick={() => {
+          if (!raceState.raceStarted) {
+            setErrorMessage(ErrorMessages.RACE_NOT_STARTED);
+            showModal();
+          } else {
+            setRaceState("raceFinished", true);
+          }
+        }}
       />
       <Button
         className="my-2 flex"
-        label="Edit"
+        label="Edit Results"
         onClick={() => setRaceState("raceFinished", false)}
       />
     </div>
@@ -68,10 +78,9 @@ function App() {
           if (inputName !== "") {
             setStudentList([...studentList, inputName]);
             setInputName("");
-          }
-          else{
-            setErrorMessage('Input field cannot be empty')
-            showModal()
+          } else {
+            setErrorMessage(ErrorMessages.EMPTY_INPUT);
+            showModal();
           }
         }}
         onChange={(e) => setInputName(e.currentTarget.value)}
